@@ -264,7 +264,7 @@ const updateAccountDetails = asyncHandler(async(req, res) => {
         throw new apiError(400, "Please provide full name and email address to continue")
     }
 
-    const user = await  User.findById(
+    const user = await  User.findByIdAndUpdate(
         req.user?._id,
         {
             $set: {
